@@ -1,0 +1,42 @@
+class Program
+{
+    static void Main()
+    {
+        // Запрашиваем длину массива у пользователя
+        Console.Write("Введите длину массива: ");
+        int length = int.Parse(Console.ReadLine());
+
+        // Инициализируем массив
+        int[] array = new int[length];
+
+        // Запрашиваем элементы массива
+        Console.WriteLine("Введите элементы массива:");
+        for (int i = 0; i < length; i++)
+        {
+            Console.Write($"Элемент {i + 1}: ");
+            array[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Находим максимальный и минимальный элементы
+        int max = array[0];
+        int min = array[0];
+
+        for (int i = 1; i < length; i++)
+        {
+            if (array[i] > max)
+            {
+                max = array[i];
+            }
+            if (array[i] < min)
+            {
+                min = array[i];
+            }
+        }
+
+        // Вычисляем разность
+        int difference = max - min;
+
+        // Выводим результат
+        Console.WriteLine($"Разность максимального и минимального элементов массива: {difference}");
+    }
+}
